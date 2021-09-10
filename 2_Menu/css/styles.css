@@ -98,13 +98,14 @@ div#container {
 }
 
 
-/********** Small devices only **********/
+/* /********** Small devices only **********/
 
 
 /* @media (min-width: 1px) and (max-width: 767px) {
     .col-min-1,
     .col-min-2,
     .col-min-3 {
-        width: 90%;
-    }
-} */
+        width: 95%;
+        margin-left: -10px;
+        margin-right: -10px;
+    } */
