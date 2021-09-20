@@ -1,301 +1,114 @@
-body {
-    font-size: 16px;
-    color: black;
-    background-color: white;
-    font-family: 'Oxygen', sans-serif;
-}
-
-
-/** HEADER **/
-
-#header-nav {
-    background-color: grey;
-    border-radius: 0;
-    border: 2px solid black;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-bottom: 1%;
-}
-
-
-/* NAVBAR */
-
-.navbar {
-    border: 3px solid black;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.navbar-header button.navbar-toggle,
-.navbar-header .icon-bar {
-    border: 1px solid black;
-}
-
-.navbar-header button.navbar-toggle {
-    clear: both;
-    margin-top: -60px;
-}
-
-.navbar-brand {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.navbar-brand h1 {
-    /* Restaurant name */
-    font-family: 'Lora', serif;
-    color: black;
-    font-size: 1.5em;
-    text-align: left;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-top: 0;
-    line-height: .75;
-    padding-bottom: 25px;
-    /*     text-align: left;
- */
-}
-
-.navbar-brand a:focus {
-    text-decoration: none;
-}
-
-
-/* .navbar li.dropdown.active.open a {
-    background-color: #fff;
-}
-.navbar li.dropdown.active.open a {
-    background-color: white !important;
-} */
-
-#collapsable-nav {
-    margin-left: 0px;
-    padding-left: 0;
-}
-
-#nav-list {
-    margin-top: 8px;
-    list-style-type: none;
-    background-color: white;
-    width: 100%;
-}
-
-#nav-list a {
-    color: black;
-    text-align: center;
-}
-
-#nav-list a:hover {
-    background: #E7E7E7;
-}
-
-#nav-list a span {
-    width: 100%;
-}
-
-#nav-list li {
-    font-size: 1.3em;
-    background-color: white;
-}
-
-
-/* HOME PAGE */
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Assignment 3</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header>
+        <nav id="header-nav" class="navbar navbar-default navbar-static-top ">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <div class="navbar-brand">
+                        <h1>Food, LLC</h1>
+                    </div>
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                     </button>
+                </div>
+
+                <!-- navbar-header-->
+                <div id="collapsable-nav" class="collapse navbar-collapse">
+                    <ul id="nav-list">
+                        <li><a href="#section1" class="visible-xs"><span>Chicken</span></a></li>
+                        <li><a href="#section2 " class="visible-xs"><span>Beef</span></a></li>
+                        <li> <a href="#section3 " class="visible-xs"><span>Sushi</span></a></li>
+                    </ul>
+                    <!-- #nav-list -->
+                </div>
+                <!-- .collapse .navbar-collapse -->
+
+
+
+
+            </div>
+            <!-- close container -->
+
+        </nav>
+        <!-- #header-nav -->
+    </header>
+
+
+    <div id="main-content " class="container ">
+
+        <h2 id="menu-categories-title ">Our Menu</h2>
+
+        <section class="row ">
+            <div class="col-md-4 col-sm-6 col-xs-12 col-xxs-12 ">
+                <div class="category-tile " id="section1 ">
+                    <h3> Chicken </h3>
+                    <p class="menu-item-details ">
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
+                        animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis
+                        voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur.
+                        a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. "</p>
+                    <p>(End of Beef Section)<a href="#menu-categories-title "> Back to Top</a>
+
+                </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 col-xxs-12 ">
+
+                <div class="category-tile " id="section2 ">
+                    <h3>Beef </h3>
+                    <p class="menu-item-details ">
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
+                        animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis
+                        voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur
+                        a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. " </p>
+                    <p>(End of Beef Section)<a href="#menu-categories-title "> Back to Top</a>
+                    </p>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-12 col-xs-12 col-xxs-12 " id="section3 ">
+                <div class="category-tile ">
+                    <h3>Sushi </h3>
+                    <p class="menu-item-details ">
+                        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia
+                        animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis
+                        voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur
+                        a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. "
+
+                    </p>
+                    <p>(End of Beef Section)<a href="#menu-categories-title "> Back to Top</a>
+
+                </div>
+                </a>
+            </div>
 
+        </section>
 
-/* .container .jumbotron {
-    box-shadow: 0 0 50px #3F0C1F;
-    border: 2px solid #3F0C1F;
-}
- */
+    </div>
+    <!-- End of #main-content -->
 
+    <!-- jQuery (Bootstrap JS plugins depend on it) -->
+    <script src="js/jquery-2.1.4.min.js "></script>
+    <script src="js/bootstrap.min.js "></script>
+    <script src="js/script.js "></script>
+</body>
 
-/* MENU CATEGORIES PAGE */
-
-.category-tile {
-    position: relative;
-    border: 2px solid #3F0C1F;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
-    margin: 0 auto 15px;
-    background: grey;
-    color: black;
-}
-
-.category-tile h3 {
-    text-align: center;
-    border: none;
-    font-family: 'Oxygen', sans-serif;
-    font-style: bold;
-}
-
-.category-tile:hover {
-    box-shadow: 0 1px 5px 1px #cccccc;
-}
-
-#menu-categories-title+div {
-    /*     OUR MENU 
- */
-    margin-bottom: 10px;
-}
-
-#menu-categories-chicken {
-    margin-bottom: 1px;
-}
-
-
-/* 
-.menu-categories-title {
-    padding-top: 10px;
-    padding-bottom: 15px;
-    font-size: 5vw;
-} */
-
-
-/* END MENU CATEGORIES PAGE */
-
-body {
-    padding-top: 80px;
-}
-
-
-/* This helped with avoiding Static Navbar Covering */
-
-h2 {
-    text-align: center;
-    font-style: bold;
-    font-family: 'Oxygen', sans-serif;
-    padding-bottom: 3%;
-    padding-top: 3%;
-}
-
-
-/* SINGLE CATEGORY PAGE */
-
-.menu-item-tile {
-    margin-bottom: 25px;
-}
-
-.menu-item-tile hr {
-    width: 80%;
-}
-
-.menu-item-tile .menu-item-price {
-    font-size: 1.1em;
-    text-align: right;
-    margin-top: -15px;
-    margin-right: -15px;
-}
-
-.menu-item-tile .menu-item-price span {
-    font-size: .6em;
-}
-
-.menu-item-description {
-    padding-right: 30px;
-}
-
-h3.menu-item-title {
-    margin: 0 0 10px;
-}
-
-.menu-item-details {
-    padding-right: 30px;
-    padding-left: 30px;
-    font-size: .9em;
-    font-style: italic;
-}
-
-
-/* END SINGLE CATEGORY PAGE */
-
-
-/********** Large devices only **********/
-
-@media (min-width: 1200px) {}
-
-
-/********** Medium devices only **********/
-
-@media (min-width: 992px) and (max-width: 1199px) {
-    /*  */
-}
-
-
-/********** Small devices only **********/
-
-@media (min-width: 768px) and (max-width: 991px) {
-    #collapsable-nav a {
-        /* Collapsed nav menu text */
-        font-size: 1.2em;
-    }
-    #collapsable-nav a span {
-        /* Collapsed nav menu glyph */
-        font-size: 1em;
-    }
-}
-
-
-/********** Extra small devices only **********/
-
-@media (max-width: 767px) {
-    /* Header */
-    .navbar-brand {
-        padding-top: 10px;
-        height: 80px;
-    }
-    .navbar-brand h1 {
-        /* Restaurant name */
-        padding-top: 10px;
-        font-size: 5vw;
-        /* 1vw = 1% of viewport width */
-    }
-    #nav-list {
-        padding: 1px;
-        margin: 1px;
-    }
-    #collapsable-nav a {
-        /* Collapsed nav menu text */
-        font-size: 1.2em;
-    }
-    #collapsable-nav a span {
-        /* Collapsed nav menu glyph */
-        font-size: 1em;
-    }
-    #xs-deliver {
-        margin-top: 5px;
-        font-size: .7em;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-    }
-    .menu-item-description {
-        text-align: center;
-    }
-}
-
-
-/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
-
-@media (max-width: 479px) {
-    /* Header */
-    .navbar-brand h1 {
-        /* Restaurant name */
-        font-size: 5em;
-        padding-top: 5px;
-        font-size: 6vw;
-    }
-    #nav-list {
-        padding: 1px;
-        margin: 1px;
-    }
-    /* End Header */
-    /* Home page */
-    .col-xxs-12 {
-        position: relative;
-        min-height: 1px;
-        padding-right: 15px;
-        padding-left: 15px;
-        float: left;
-        width: 100%;
-    }
-}
+</html>
