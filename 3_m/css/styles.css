@@ -1,0 +1,311 @@
+body {
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    font-family: 'Oxygen', sans-serif;
+}
+
+
+/** HEADER **/
+
+#header-nav {
+    background-color: grey;
+    border-radius: 0;
+    border: 2px solid black;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    border: 3px solid black;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar-header button.navbar-toggle,
+.navbar-header .icon-bar {
+    border: 1px solid black;
+}
+
+.navbar-header button.navbar-toggle {
+    clear: both;
+    margin-top: -60px;
+}
+
+.navbar-brand {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.navbar-brand h1 {
+    /* Restaurant name */
+    font-family: 'Lora', serif;
+    color: black;
+    font-size: 1.5em;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    line-height: .75;
+    padding-bottom: 25px;
+    /*     text-align: left;
+ */
+}
+
+.navbar-brand a:focus {
+    text-decoration: none;
+}
+
+
+/* .navbar li.dropdown.active.open a {
+    background-color: #fff;
+}
+
+.navbar li.dropdown.active.open a {
+    background-color: white !important;
+} */
+
+#collapsable-nav {
+    margin-left: 0px;
+    padding-left: 0;
+}
+
+#nav-list {
+    margin-top: 8px;
+    list-style-type: none;
+    background-color: white;
+    width: 100%;
+}
+
+#nav-list a {
+    color: black;
+    text-align: center;
+}
+
+#nav-list a:hover {
+    background: #E7E7E7;
+}
+
+#nav-list a span {
+    width: 100%;
+}
+
+#nav-list li {
+    font-size: 1.3em;
+    background-color: white;
+}
+
+
+/* HOME PAGE */
+
+
+/* .container .jumbotron {
+    box-shadow: 0 0 50px #3F0C1F;
+    border: 2px solid #3F0C1F;
+}
+
+ */
+
+
+/* MENU CATEGORIES PAGE */
+
+.category-tile {
+    position: relative;
+    border: 2px solid #3F0C1F;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 15px;
+    background: grey;
+    color: black;
+}
+
+.category-tile h3 {
+    text-align: center;
+    border: none;
+    font-family: 'Oxygen', sans-serif;
+    font-style: bold;
+}
+
+.category-tile:hover {
+    box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#menu-categories-title+div {
+    /*     OUR MENU 
+ */
+    margin-bottom: 10px;
+}
+
+#menu-categories-chicken {
+    margin-bottom: 1px;
+}
+
+
+/* 
+.menu-categories-title {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 5vw;
+} */
+
+
+/* END MENU CATEGORIES PAGE */
+
+body {
+    padding-top: 80px;
+}
+
+
+/* This helped with avoiding Static Navbar Covering */
+
+h2 {
+    text-align: center;
+    font-style: bold;
+    font-family: 'Oxygen', sans-serif;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+
+/* SINGLE CATEGORY PAGE */
+
+.menu-item-tile {
+    margin-bottom: 25px;
+}
+
+.menu-item-tile hr {
+    width: 80%;
+}
+
+.menu-item-tile .menu-item-price {
+    font-size: 1.1em;
+    text-align: right;
+    margin-top: -15px;
+    margin-right: -15px;
+}
+
+.menu-item-tile .menu-item-price span {
+    font-size: .6em;
+}
+
+.menu-item-description {
+    padding-right: 30px;
+}
+
+h3.menu-item-title {
+    margin: 0 0 10px;
+}
+
+.menu-item-details {
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: .9em;
+    font-style: italic;
+}
+
+
+/* END SINGLE CATEGORY PAGE */
+
+
+/********** Large devices only **********/
+
+@media (min-width: 1200px) {}
+
+
+/********** Medium devices only **********/
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /*  */
+}
+
+
+/********** Small devices only **********/
+
+@media (min-width: 768px) and (max-width: 991px) {
+    #collapsable-nav a {
+        /* Collapsed nav menu text */
+        font-size: 1.2em;
+    }
+    #collapsable-nav a span {
+        /* Collapsed nav menu glyph */
+        font-size: 1em;
+    }
+}
+
+
+/********** Extra small devices only **********/
+
+@media (max-width: 767px) {
+    /* Header */
+    .container {
+        padding: 0;
+        margin: 0;
+    }
+    .navbar-brand {
+        padding-top: 10px;
+        height: 80px;
+    }
+    .navbar-brand h1 {
+        /* Restaurant name */
+        padding-top: 10px;
+        font-size: 5vw;
+        /* 1vw = 1% of viewport width */
+    }
+    #nav-list {
+        padding: 1px;
+        margin: 1px;
+    }
+    #collapsable-nav a {
+        /* Collapsed nav menu text */
+        font-size: 1.2em;
+    }
+    #collapsable-nav a span {
+        /* Collapsed nav menu glyph */
+        font-size: 1em;
+    }
+    #xs-deliver {
+        margin-top: 5px;
+        font-size: .7em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+    }
+    .menu-item-description {
+        text-align: center;
+    }
+}
+
+
+/********** Super extra small devices Only :-) (e.g., iPhone 4) **********/
+
+@media (max-width: 479px) {
+    /* Header */
+    .container {
+        padding: 0;
+        margin: 0;
+    }
+    .navbar-brand h1 {
+        /* Restaurant name */
+        font-size: 5em;
+        padding-top: 5px;
+        font-size: 6vw;
+    }
+    #nav-list {
+        padding: 1px;
+        margin: 1px;
+    }
+    /* End Header */
+    /* Home page */
+    .col-xxs-12 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        float: left;
+        width: 100%;
+    }
+}
