@@ -28,23 +28,24 @@ function mapReduce_single(names) {
         //return ("Hello " + names);
     }
 }
+
 console.log(names.map(mapReduce_single));
 
+function mapReduce_double() {
+    hello = [];
+    bye = [];
 
-function mapReduce_double(names) {
+    names.forEach(function(x) {
 
-    if (names.toLowerCase().charAt(0) == 'j') {
-        var simple_bye = byeSpeaker.speakSimple();
-        return (simple_bye(names));
-        //return ("Bye " + names);
-    } else {
-        var simple_hello = helloSpeaker.speakSimple();
-        return (simple_hello(names));
-        //return ("Hello " + names);
-    }
+        if (x.toLowerCase().charAt(0) == 'j') {
+            var simple_bye = byeSpeaker.speakSimple();
+            bye.push(simple_bye(x));
+        } else {
+            var simple_hello = helloSpeaker.speakSimple();
+            hello.push(simple_hello(x));
+        }
+    });
+    return [hello, bye];
 }
-console.log(names.map(mapReduce_double));
 
-
-//Reduce; 
-//You are required to use {hello: [], bye: []} as your initialValue.
+console.log(names.reduce(mapReduce_double));
