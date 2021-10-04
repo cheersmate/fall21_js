@@ -25,7 +25,7 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
     var menuItemsTitleHtml = "snippets/menu-items-title.html";
     var menuItemHtml = "snippets/menu-item.html";
 
-    var aboutHtml = "snippets/about-snippet.html";
+    var aboutHtmlUrl = "snippets/about-snippet.html";
 
     // Convenience function for inserting innerHTML for 'select'
     var insertHtml = function(selector, html) {
@@ -65,21 +65,6 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
     };
 
 
-    // Remove the class 'active' from home and switch to About button
-    var switchAboutToActive = function() {
-        // Remove 'active' from home button
-        var classes = document.querySelector("#navAboutButton").className;
-        classes = classes.replace(new RegExp("active", "g"), "");
-        document.querySelector("#navAboutButton").className = classes;
-
-        // Add 'active' to menu button if not already there
-        classes = document.querySelector("#navAboutButton").className;
-        if (classes.indexOf("active") === -1) {
-            classes += " active";
-            document.querySelector("#navAboutButton").className = classes;
-        }
-    };
-
 
     // On page load (before images or CSS)
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -108,24 +93,6 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
             },
             false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
     }
-
-
-    // Given array of category objects, returns a random category object.
-    function chooseRandomReviewRating(categories) {
-        // Choose a random index into the array (from 0 inclusively until array length (exclusively))
-        var rating_number = Math.floor(Math.random() * 5);
-
-        // return category object with that randomArrayIndex
-        return rating_number;
-    }
-
-    // Load the about categories view
-    dc.loadAboutCategories = function() {
-        showLoading("#main-content");
-        $ajaxUtils.sendGetRequest(
-            allCategoriesUrl,
-            buildAndShowCategoriesHTML);
-    };
 
 
 
@@ -237,30 +204,7 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
             false);
     }
 
-    // Builds HTML for the single category page based on the data
-    // from the server
-    function buildAndShowAboutHTML(categorAboutItems) {
-        // Load title snippet of menu items page
-        $ajaxUtils.sendGetRequest(
-            menuItemsTitleHtml,
-            function(menuItemsTitleHtml) {
-                // Retrieve single menu item snippet
-                $ajaxUtils.sendGetRequest(
-                    menuItemHtml,
-                    function(menuItemHtml) {
-                        // Switch CSS class active to menu button
-                        switchMenuToActive();
 
-                        var menuItemsViewHtml =
-                            buildMenuItemsViewHtml(categoryMenuItems,
-                                menuItemsTitleHtml,
-                                menuItemHtml);
-                        insertHtml("#main-content", menuItemsViewHtml);
-                    },
-                    false);
-            },
-            false);
-    }
 
 
     // Using category and menu items data and snippets html
@@ -361,6 +305,74 @@ $(function() { // Same as document.addEventListener("DOMContentLoaded"...
         return html;
     }
 
+
+    /* 
+
+        // Remove the class 'active' from home and switch to About button
+        var switchAboutToActive = function() {
+            // Remove 'active' from home button
+            var classes = document.querySelector("#navAboutButton").className;
+            classes = classes.replace(new RegExp("active", "g"), "");
+            document.querySelector("#navAboutButton").className = classes;
+
+            // Add 'active' to menu button if not already there
+            classes = document.querySelector("#navAboutButton").className;
+            if (classes.indexOf("active") === -1) {
+                classes += " active";
+                document.querySelector("#navAboutButton").className = classes;
+            }
+        };
+     */
+
+    // Load the about categories view
+    dc.loadAboutCategories = function() {
+        showLoading("#main-content");
+        $ajaxUtils.sendGetRequest(
+            allCategoriesUrl, // needs to be here or won't load; 
+            buildAndShowAboutHtml);
+    };
+
+    function buildAndShowAboutHtml(categories) {
+
+        // Load home snippet page
+        $ajaxUtils.sendGetRequest(
+            aboutHtmlUrl,
+            function(aboutHtml) {
+
+                //switchAboutToActive(); //  doesn't seem be necessary? 
+                var chosenRating = chooseRandomReviewRating();
+                //full_star = 'fa fa-star';
+
+                for (var i = 0; i <= chosenRating; i++) {
+                    //var aboutHtmlToInsert = insertProperty(aboutHtml, "stars", full_star);
+
+                    aboutHtml += "<span class='fa fa-star'></span>";
+
+                    var aboutHtmlToInsert = insertProperty(aboutHtml);
+
+                }
+
+                insertHtml("#main-content", aboutHtmlToInsert); // insert elsewhere
+            },
+            false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
+    }
+
+
+    // Given array of category objects, returns a random category object.
+    function chooseRandomReviewRating(categories) {
+        // Choose a random index into the array (from 0 inclusively until array length (exclusively))
+        var rating_number = Math.floor(Math.random() * (5 - 1) + 1);
+        // return category object with that randomArrayIndex
+        return rating_number;
+    }
+
+
     global.$dc = dc;
 
 })(window);
+
+
+//
+//var aboutHtmlToInsert = insertProperty(aboutHtml, 'stars', "'" + chosenRating + "'")
+//var aboutHtmlToInsert = insertProperty(aboutHtml, full_star, ""'" + chosenRating + "'"")
+// var x = document.getElementsByClassName("");
