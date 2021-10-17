@@ -1,0 +1,71 @@
+<!doctype html>
+<html ng-app="ShoppingListCheckOff" lang="en">
+
+<head>
+    <title>Shopping List Check Off</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+
+
+    <style>
+        .emptyMessage {
+            font-weight: bold;
+            color: red;
+            font-size: 1em;
+        }
+        
+        li {
+            margin-bottom: 2px;
+            font-size: 1em;
+        }
+        
+        li>button {
+            margin-left: 3px;
+        }
+        
+        button>span {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Shopping List Check Off</h1>
+
+        <div class="row">
+
+            <div class="col-md-6" ng-controller='ToBuyController as buyController'>
+
+                <h2>To Buy:</h2>
+                <ul>
+                    <li ng-repeat="item in buyController.items">
+                        <!--         Buy {{item.quantity}} of {{item.name}}  -->
+                        Buy <input type="textbox" size="1" ng-model="item.quantity"> {{item.name}}
+                        <button ng-click="buyController.bought()" class="btn btn-default">
+                            <span class="glyphicon glyphicon-ok"></span> 
+                            Bought
+                        </button>
+                    </li>
+                </ul>
+                <div ng-if="buyController.items == 0" class="emptyMessage">Everything is bought.</div>
+            </div>
+
+
+            <div class="col-md-6" ng-controller='AlreadyBoughtController as boughtController'>
+
+                <h2>Already Bought:</h2>
+                <ul>
+                    <li ng-repeat="item in boughtController.items">
+                        Bought {{ item.quantity }} of {{ item.name }} for total price of ${{(item.quantity * item.pricePerItem) | currency : "$$$" : 2}} </li>
+                </ul>
+                <div ng-if="boughtController.items == 0" class="emptyMessage">Nothing bought yet.</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
