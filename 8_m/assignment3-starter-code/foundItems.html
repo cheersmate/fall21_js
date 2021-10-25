@@ -1,0 +1,12 @@
+<br>
+
+<ul>
+    <li ng-repeat="item in narrowCtrl.items">
+        <div>
+            <p><b>Name:</b> {{ item.name }} <b>Short Name:</b> {{ item.short_name }} <b>Description:</b> {{ item.description }}</p>
+        </div>
+        <button ng-click="narrowCtrl.onRemove({$index});">Don't Want This One!</button>
+    </li>
+</ul>
+
+<div class="emptyMessage" ng-show="narrowCtrl.items == 0"> Nothing found </div>
