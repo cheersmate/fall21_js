@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
-
 </head>
 
 <body>
@@ -21,11 +20,10 @@
         <div class="form-group narrow-button">
             <button ng-click="narrowCtrl.getMatchedMenuItems();" class="btn btn-primary">Narrow It Down For Me!</button>
         </div>
-
-        <br><br>
-        <found-items items="narrowCtrl.items" on-remove="narrowCtrl.removeItem($index)"></found-items>
+        <br></br>
+        <br></br>
+        <found-items items="narrowCtrl.items" on-remove="narrowCtrl.removeItem($index)"> </found-items>
     </div>
-
 </body>
 
 </html>
