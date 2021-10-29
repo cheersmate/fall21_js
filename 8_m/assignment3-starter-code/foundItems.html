@@ -1,7 +1,0 @@
-<ul>
-    <li ng-repeat="item in narrowCtrl.items">
-        <div> Name: {{item.name}} Short Name: {{item.short_name}} Description: {{item.description}}</div>
-        <button ng-click="narrowCtrl.onRemove({$index});">Don't Want This One.</button>
-    </li>
-</ul>
-<div ng-if="narrowCtrl.items == 0" class="error"> Nothing Found.</div>
