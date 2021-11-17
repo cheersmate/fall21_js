@@ -1,0 +1,52 @@
+<div class="container">
+    <h3>
+
+        <div class='form-horizontal' name='signupform' ng-show="signupCtrl.myinfo !==null" novalidate>
+            <!-- TODO ng-show condition -->
+
+            <div class="row">
+                <div class="form-group">
+                    First Name
+                    <input ng-model="signupCtrl.myinfo.first" type="text" class="form-control" name="first">
+                </div>
+
+
+                <div class="form-group">
+                    Last Name
+                    <div>
+                        <input ng-model="signupCtrl.myinfo.last" type="text" class="form-control" required>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    Email
+                    <div>
+                        <input ng-model="signupCtrl.myinfo.email" type="email" class="form-control">
+                    </div>
+
+                    <div>
+                        <span ng-if="signupform.email.$invalid && signupform.email.$touched" class="error">Invalid, please use proper email format: xxx@xxx.xxx</span>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    Phone
+                    <input ng-model="signupCtrl.myinfo.phone" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    Favorite Item
+                    <input ng-model="signupCtrl.myinfo.shortname" type="text" class="form-control">
+
+                    <span ng-if="signupCtrl.invalidMenu">No such item exists. </span>
+                </div>
+
+                <button type="submit" class="btn btn-default" ng-click="signupCtrl.submit()">Submit</button>
+
+                <div ng-if="signupCtrl.saved">Profile Saved.</div>
+
+            </div>
+        </div>
+</div>

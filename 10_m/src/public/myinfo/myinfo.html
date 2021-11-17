@@ -1,0 +1,21 @@
+<div class="container">
+    My Info
+
+    <div ng-show="myinfoCtrl.myinfo.first != ''">
+
+        <div>
+            <p>First Name: {{ myinfoCtrl.myinfo.first }}</p>
+            <p>Last Name: {{ myinfoCtrl.myinfo.last }}</p>
+            <p>Email: {{ myinfoCtrl.myinfo.email }}</p>
+            <p>Phone: {{ myinfoCtrl.myinfo.phone }}</p>
+            <p>Favorite Dish: {{ myinfoCtrl.myinfo.shortname["name"]}}</p>
+        </div>
+    </div>
+
+
+    <div ng-show="myinfoCtrl.myinfo.first === ''">
+        Not Signed up Yet
+        <a ui-sref="public.signup"> Sign up now!</a>
+    </div>
+
+</div>
